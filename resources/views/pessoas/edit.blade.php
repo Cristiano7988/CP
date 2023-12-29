@@ -53,8 +53,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md">
+                        <div class="col-md d-flex justify-content-between">
                             <input type="submit" class="btn btn-primary" value="Salvar" />
+                            <form method="POST" class="d-inline" action="{{ route('pessoas.destroy', $pessoa) }}">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit"  class="btn btn-danger" value="Deletar" />
+                            </form>
                         </div>
                     </div>
                 </form>

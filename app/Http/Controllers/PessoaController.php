@@ -63,6 +63,7 @@ class PessoaController extends Controller
      */
     public function destroy(Pessoa $pessoa)
     {
-        //
+        $pessoa->delete();
+        return redirect()->route('pessoas.index')->with('success', "Pessoa de nº {$pessoa->id}, {$pessoa->nome}, excluída.");
     }
 }
