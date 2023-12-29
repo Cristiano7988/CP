@@ -24,7 +24,7 @@
                     </tr>
                 @endif
                 @foreach ($pessoas as $pessoa)
-                    <tr style="cursor: pointer;" onclick="location.pathname = 'nucleos/{{ $pessoa->id }}'">
+                    <tr style="cursor: pointer;" onclick="location.pathname = 'pessoas/{{ $pessoa->id }}'">
                         <th scope="row">{{ $pessoa->id }}</th>
                         <td>{{ $pessoa->nome }}</td>
                         <td>{{ $pessoa->telefone }}</td>
