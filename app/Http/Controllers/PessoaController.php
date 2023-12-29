@@ -46,7 +46,7 @@ class PessoaController extends Controller
      */
     public function edit(Pessoa $pessoa)
     {
-        // 
+        return view('pessoas.edit', compact('pessoa'));
     }
 
     /**
@@ -54,7 +54,8 @@ class PessoaController extends Controller
      */
     public function update(Request $request, Pessoa $pessoa)
     {
-        //
+        $pessoa->update($request->all());
+        return redirect()->route('pessoas.index')->with('success', "Pessoa de nº {$pessoa->id}, {$pessoa->nome}, atualizada.");
     }
 
     /**
