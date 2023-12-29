@@ -12,6 +12,14 @@
                 }
                 else $(e.target).siblings('.text-danger').addClass('d-none');
             });
+            // Email
+            $('#email').keyup((e) => {
+                if (!/@/.test(e.target.value)) {
+                    $(e.target).siblings('.text-danger').removeClass('d-none');
+                    return;
+                }
+                else $(e.target).siblings('.text-danger').addClass('d-none');
+            });
             // TELEFONE
             $('#telefone').keyup((e) => {
                 if (!/[0-9]/.test(e.target.value)) {
@@ -57,7 +65,9 @@
 
                         <div class="col-md-8">
                             <input id="email" type="mail" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
+                            <span class="text-danger d-none small" role="alert"><strong>
+                                Email inválido
+                            </strong></span>
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
