@@ -21,7 +21,7 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        // 
+        return view('pessoas.create');
     }
 
     /**
@@ -29,7 +29,8 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        $pessoa = Pessoa::create($request->all());
+        return redirect()->back()->with('success', "Pessoa de nº {$pessoa->id}, {$pessoa->nome}, adicionada.");
     }
 
     /**
