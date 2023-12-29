@@ -41,7 +41,7 @@
                 Atualizar Pessoa
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('pessoas.update', $pessoa) }}">
+                <form method="POST" onsubmit="return confirm('Deseja alterar essa pessoa?')" action="{{ route('pessoas.update', $pessoa) }}">
                     @csrf
                     @method('PATCH')
 
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </form>
-                <form method="POST" class="d-flex justify-content-end" action="{{ route('pessoas.destroy', $pessoa) }}">
+                <form method="POST" onsubmit="return confirm('Deseja deletar essa pessoa?')" class="d-flex justify-content-end" action="{{ route('pessoas.destroy', $pessoa) }}">
                     @csrf
                     @method('DELETE')
                     <input type="submit"  class="btn btn-danger" value="Deletar" />
