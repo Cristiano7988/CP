@@ -38,7 +38,7 @@ class PessoaController extends Controller
      */
     public function show(Pessoa $pessoa)
     {
-        // 
+        return view('pessoas.show', compact('pessoa'));
     }
 
     /**
