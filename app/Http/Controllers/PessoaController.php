@@ -29,7 +29,7 @@ class PessoaController extends Controller
                 $pessoa ? Rule::unique('pessoas')->ignore($pessoa->id) : 'unique:pessoas',
                 'string',
                 'regex:/^([0-9\s\-\+\(\)]*)$/',
-                'min:9',
+                'min:12',
                 'max:20'
             ],
             'email' => [
